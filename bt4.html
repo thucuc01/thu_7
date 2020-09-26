@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td> Nhap ho va ten : </td>
+        <td><input type="text" name="nhap ten" id="name"></td>
+    </tr>
+    <tr>
+        <td> Diem Toan : </td>
+        <td> <input type="text" name="diem Toan" id="toan"> </td>
+    </tr>
+    <tr>
+        <td> Diem Van : </td>
+        <td> <input type="text" name="diem Van" id="van"> </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> <button onclick="avg()">Diem TB</button> </td>
+    </tr>
+</table>
+<p id="avgrate"></p>
+
+</body>
+</html>
+<script>
+    function avg() {
+        name= document.getElementById('name').value;
+        toan=parseFloat(document.getElementById("toan").value);
+        van=parseFloat(document.getElementById("van").value);
+        document.getElementById('avgrate').innerHTML ="Diem TB cua "+name+" la : " +(toan + van)/2;
+    }
+</script>

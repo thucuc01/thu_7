@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arrs = [[1,-2,6,"x",3,5,"b",8,4,"y",4,4,"n"],
+                ["a",4,6,"7",3,5,"8",8,4,7,"4",4,3],
+                [1,4,-1,7,3,"c",8,"h",4,7,"g",4,3],
+                 [1,4,6,"z",3,5,-9,8,"d",7,4,"e",3]];
+
+for (let i = 0; i < arrs.length; i++) {
+    for (let j = 0; j < arrs[i].length; j++) {
+        if (typeof (arrs[i][j]) === 'string') {
+            arrs[i].splice(j, 1)
+        }
+    }
+    arrs[i].sort();
+    let newarr = [];
+    let arrcount = [];
+    let count = 0;
+    let tg = 0;
+    newarr.push(arrs[i][0]);
+    for (let n = 0; n < newarr.length; n++) {
+        for (let m = tg; m < arrs[i].length; m++) {
+            if (newarr[n] === arrs[i][m]) {
+                count++;
+            }
+        }
+        arrcount.push(count);
+        tg += count;
+        if (arrs[i][tg]) {
+            newarr.push(arrs[i][tg]);
+        }
+        count = 0;
+    }
+    document.write('<p>Hàng '+ i +': </p>')
+    for (let h = 0; h < newarr.length; h++) {
+        document.write('Số lần lặp của số nguyên ' + newarr[h] + ' :' +arrcount[h] +'<br>');
+    }
+}
+
+</script>

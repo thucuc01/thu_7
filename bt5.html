@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>So thu 1: </td>
+        <td> <input type="number" id="number1"></td>
+        <td> <button onclick="tinhtoan(1)"> + </button> </td>
+        <td> <button onclick="tinhtoan(2)"> - </button> </td>
+    </tr>
+    <tr>
+        <td>So thu 2: </td>
+        <td> <input type="number" id="number2"></td>
+        <td> <button onclick="tinhtoan(3)"> x </button> </td>
+        <td> <button onclick="tinhtoan(4)"> / </button> </td>
+    </tr>
+    <tr>
+
+        <td>Ket qua : </td>
+        <td><input disabled="disabled" id="result"></td>
+    </tr>
+
+</table>
+</body>
+</html>
+<script>
+    function tinhtoan(type) {
+        let a= +document.getElementById('number1').value;
+        let b= +document.getElementById('number2').value;
+        switch (type){
+            case 1:  document.getElementById('result').value=a+b;
+            break;
+            case 2:  document.getElementById('result').value=a-b;
+            break;
+            case 3:  document.getElementById('result').value=a*b;
+            break;
+            case 4:  document.getElementById('result').value=a/b;
+            break;
+        }
+    }
+
+</script>

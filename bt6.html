@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arrs = [[1,-2,6,"x",3,5,"b",8,4,"y",4,4,"n"],
+                ["a",4,6,"7",3,5,"8",8,4,7,"4",4,3],
+                [1,4,-1,7,3,"c",8,"h",4,7,"g",4,3],
+                [1,4,6,"z",3,5,-9,8,"d",7,4,"e",3]
+              ]
+// bai6 -1
+    let sumArr = function (arr){
+        let sum=0;
+        for(let i=0; i<arr.length;i++){
+            for(let j=0;j<arr[i].length;j++){
+                if(typeof (arr[i][j])==='number'){
+                    if(arr[i][j]>0){
+                        sum=sum +(arr[i][j]);
+                    }
+                }
+            }
+        } return sum;
+    }
+    alert("tong cac so nguyen duong : " +sumArr(arrs));
+// bai6- 2
+    let getStringAndNumber = function (arr2) {
+        let arrnew=[];
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                if (typeof (arr2[i][j]) === 'string') {
+                    arrnew.push(arr2[i][j]);
+                }else{
+                    if(typeof (arr2[i][j]) === 'number'){
+                        if(arr2[i][j]<0){
+                            arrnew.push(arr2[i][j]);
+                        }
+                    }
+                }
+
+            }
+        } return arrnew;
+
+    }
+    alert('day cac phan tu la string va so am: '+getStringAndNumber(arrs));
+//bai 6 -3
+    let changeNumber = function (arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (typeof (arr[i][j]) === 'string') {
+                    arr[i][j]=0;
+                }
+            }
+        } alert('Cac string thay bang so 0 duoc: '+arr)
+    }
+    changeNumber(arrs);
+// bai 6- 4
+    let getMax = function (arr) {
+        let max=0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if(typeof(arr[i][j])==='number'){
+                    if(arr[i][j]>max){
+                        max=arr[i][j];
+                    }
+                }
+            }
+        } return max;
+    }
+    alert('so lon nhat la: '+getMax(arrs));
+</script>
